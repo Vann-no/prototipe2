@@ -1,0 +1,220 @@
+@font-face {
+  font-family: font1;
+  src: url(font/font1.ttf);
+}
+
+.viewport {
+  height: 100vh;
+  position: relative;
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.slide1 {
+  background: linear-gradient(to top, #f4f8d3, #f7cfd8);
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-kucing {
+  width: 200px;
+}
+.kucingbuket {
+  width: 100%;
+  animation: masuk 1s ease-out, bagoyang 2s infinite;
+}
+@keyframes bagoyang {
+  0%,
+  100% {
+    transform: rotate(2deg);
+  }
+  50% {
+    transform: rotate(-2deg);
+  }
+}
+
+.container-ucapanS1 {
+  font-family: font1;
+  font-size: 0.8rem;
+  text-align: center;
+  animation: masuk 2s ease-out, kelip 2.5s infinite;
+}
+@keyframes masuk {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+@keyframes kelip {
+  0%,
+  100% {
+    color: #f7cfd8;
+  }
+  50% {
+    color: #a6d6d6;
+  }
+  25% {
+    color: rgb(250, 210, 253);
+  }
+}
+@keyframes kelip2 {
+  0%,
+  100% {
+    color: #b6b8fe;
+  }
+  50% {
+    color: #a5f9a5;
+  }
+  25% {
+    color: rgb(240, 149, 250);
+  }
+}
+
+.hbd1 {
+  letter-spacing: 2.5px;
+  margin-top: 3rem;
+  margin-bottom: 0rem;
+}
+.hbd2 {
+  letter-spacing: 3px;
+  margin-top: 0rem;
+  font-size: 0.8rem;
+  animation: kelip2 2.5s infinite;
+}
+
+.slide2 {
+  background: linear-gradient(to bottom, #f4f8d3, #f7cfd8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-kue {
+  width: 100px;
+  align-items: center;
+}
+.kue {
+  width: 100%;
+  animation: bagoyang 2s infinite;
+}
+.container-ucapanS2 {
+  font-size: 0.5rem;
+  text-align: center;
+  animation: kelip2 2.5s infinite;
+}
+
+.doa1 {
+  margin-bottom: 0rem;
+}
+.doa2 {
+  margin-top: 0rem;
+  font-size: 0.7rem;
+}
+
+.slide3 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: bgChange 12s infinite alternate;
+}
+
+@keyframes bgChange {
+  0% {
+    background-color: #f7cfd8;
+  }
+  25% {
+    background-color: #ffd6e0;
+  }
+  50% {
+    background-color: #d6e0ff;
+  }
+  75% {
+    background-color: #e0ffd6;
+  }
+  100% {
+    background-color: #f7cfd8;
+  }
+}
+
+.disc {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url("aset/inda1.jpg"); /* ganti dengan foto gebetan */
+  background-size: cover;
+  background-position: center;
+  animation: spin 8s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.container-lagu {
+  position: fixed;
+  bottom: 0.8rem;
+  z-index: 2;
+}
+
+.lagu-controls button {
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #3333337a;
+  color: white;
+  font-weight: bold;
+  font-size: 0.5rem;
+  transition: background 0.3s;
+}
+
+.lagu-controls button:hover {
+  background: #555;
+}
+
+.lyrics {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 0.5rem;
+  font-family: Arial, sans-serif;
+  color: gray; /* default burem */
+}
+
+.lyrics span {
+  opacity: 0.3; /* burem default */
+  transition: opacity 1s ease; /* animasi halus */
+}
+
+.lyrics span.active {
+  opacity: 1; /* full muncul */
+  font-weight: bold;
+}
+
+.lyrics span.fadeout {
+  opacity: 0.3; /* balik burem lagi */
+  font-weight: normal;
+}

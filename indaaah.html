@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+
+  <body>
+    <main class="viewport">
+      <!-- 1.slide -->
+      <section class="slide1">
+        <!-- Pilihan Lagu -->
+        <div class="container-lagu">
+          <div class="lagu-controls">
+            <button id="startMusic">Play random</button>
+            <button id="song1Btn" onclick="playLagu1('aset/lagu1.mp3', this)">
+              stuck with you
+            </button>
+            <button id="song2Btn" onclick="playLagu2('aset/lagu2.mp3', this)">
+              best part
+            </button>
+          </div>
+        </div>
+
+        <div class="container-kucing">
+          <img src="aset/kucingbuket.png" alt="kucing" class="kucingbuket" />
+        </div>
+
+        <div class="container-ucapanS1">
+          <h1 class="hbd1">Happy Birthday Indaaah</h1>
+          <h3 class="hbd2">yang ke 15<small>thn</small></h3>
+        </div>
+      </section>
+
+      <!-- 2.slide -->
+      <section class="slide2">
+        <div class="container-kue">
+          <img src="aset/kue.png" alt="kue" class="kue" />
+        </div>
+
+        <div class="container-ucapanS2">
+          <h2 class="doa1">Semogaa Panjang Umurr, Sehat Selalu</h2>
+          <h2 class="doa2">Sekolaa nya Lancarr, Dan Cepet Gedee yaaw</h2>
+        </div>
+      </section>
+
+      <!-- 3.slide -->
+
+      <section class="slide3">
+        <div class="music-container">
+          <!-- Disc -->
+          <div class="disc"></div>
+
+          <!-- Audio Player (hidden) -->
+          <audio id="player" , id="audio">
+            <source src="aset/lagu1.mp3" type="audio/mpeg" />
+          </audio>
+
+          <!-- Lyrics -->
+
+          <div id="lyrics1" class="lyrics">
+            <p>
+              <span data-time="-0.5"
+                >So, lock the door and throw out the key</span
+              >
+            </p>
+            <p><span data-time="2.7">Can't fight this no more</span></p>
+            <p><span data-time="5.0">It's just you and me</span></p>
+            <p>
+              <span data-time="6.0"
+                >and there's nothing i nothing i'd rather do</span
+              >
+            </p>
+            <p>
+              <span data-time="10.0"
+                >i'm stuck with you, stuck with you, stuck with you</span
+              >
+            </p>
+            <p>
+              <span data-time="15.0">so go ahead, and drive me insane</span>
+            </p>
+            <p><span data-time="19.0">baby run your mouth,</span></p>
+            <p><span data-time="20.5">i still wouldn't change</span></p>
+            <p><span data-time="22.5">all this lovin' you,</span></p>
+            <p><span data-time="24.0">hati'n you,</span></p>
+            <p><span data-time="25.0">wanti'n you</span></p>
+            <p>
+              <span data-time="27.0"
+                >i'm stuck with you, stuck with you, stuck with youuu</span
+              >
+            </p>
+          </div>
+
+          <div id="lyrics2" class="lyrics" style="display: none">
+            <p><span data-time="0.0">Give it all, oh</span></p>
+            <p><span data-time="3.0">I just wanna see</span></p>
+            <p><span data-time="5.0">I just wanna see how</span></p>
+            <p><span data-time="8.0">beautiful you are</span></p>
+            <p><span data-time="11.0">You know that I see it</span></p>
+            <p><span data-time="14.5">I know you're a star</span></p>
+            <p><span data-time="17.5">Where you go, I'll follow</span></p>
+            <p><span data-time="21.0">no matter how far</span></p>
+            <p><span data-time="24.0">If life is a movie</span></p>
+            <p><span data-time="27.5">, then you're the best part</span></p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
