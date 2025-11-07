@@ -3,12 +3,53 @@
   src: url(font/font1.ttf);
 }
 
+@font-face {
+  font-family: font2;
+  src: url(font/font2.ttf);
+}
+
+@font-face {
+  font-family: font3;
+  src: url(font/font3.ttf);
+}
+
+@font-face {
+  font-family: font4;
+  src: url(font/font4.ttf);
+}
+
 .viewport {
   height: 100vh;
   position: relative;
   overflow-y: auto;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
+}
+
+.dot-nav {
+  position: fixed;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 10;
+}
+.dot-nav a {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  outline: 1px solid rgba(0, 0, 0, 0.25);
+  background: rgba(252, 171, 171, 0.25);
+  display: inline-block;
+  text-indent: -9999px;
+}
+.dot-nav a:hover {
+  background: #93f490;
+  transform: scale(1.3);
+  transition: transform 0.3s, background 0.3s;
 }
 
 section {
@@ -21,7 +62,7 @@ section {
 }
 
 .slide1 {
-  background: linear-gradient(to top, #f4f8d3, #f7cfd8);
+  background: linear-gradient(to top, #f0f0f0, #b6ceb4);
   display: flex;
   position: relative;
   justify-content: center;
@@ -31,6 +72,7 @@ section {
 
 .container-kucing {
   width: 200px;
+  z-index: 3;
 }
 .kucingbuket {
   width: 100%;
@@ -46,11 +88,41 @@ section {
   }
 }
 
+.kucingbuket:hover {
+  transform: scale(2.08);
+  transition: transform 0.3s;
+}
+
+.confetti {
+  position: absolute;
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: red; /* warna default, nanti diganti JS */
+  opacity: 0;
+  animation: fall 8s linear forwards;
+  z-index: 2;
+}
+
+@keyframes fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-100vh) rotate(360deg);
+  }
+}
+
 .container-ucapanS1 {
   font-family: font1;
+  color: #96a78d;
   font-size: 0.8rem;
   text-align: center;
-  animation: masuk 2s ease-out, kelip 2.5s infinite;
+  animation: masuk 2s ease-out;
+  z-index: 3;
 }
 @keyframes masuk {
   0% {
@@ -88,37 +160,50 @@ section {
 }
 
 .hbd1 {
+  text-shadow: 0 0 8px #d9e9cf, 0 0 16px #90b9b9;
   letter-spacing: 2.5px;
   margin-top: 3rem;
   margin-bottom: 0rem;
+  z-index: 3;
 }
 .hbd2 {
+  text-shadow: 0 0 8px #d9e9cf, 0 0 16px #a6d6d6;
   letter-spacing: 3px;
   margin-top: 0rem;
   font-size: 0.8rem;
-  animation: kelip2 2.5s infinite;
 }
 
 .slide2 {
-  background: linear-gradient(to bottom, #f4f8d3, #f7cfd8);
+  background: linear-gradient(to bottom, #f0f0f0, #96a78d);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .container-kue {
   width: 100px;
   align-items: center;
+  z-index: 3;
 }
 .kue {
   width: 100%;
   animation: bagoyang 2s infinite;
 }
+
+.container-kue:hover {
+  transform: scale(1.08);
+  transition: transform 0.5s;
+}
+
 .container-ucapanS2 {
+  font-family: font1;
+  letter-spacing: 2px;
   font-size: 0.5rem;
   text-align: center;
-  animation: kelip2 2.5s infinite;
+  color: #f0f0f0;
+  text-shadow: 0 0 8px #96a78d, 0 0 8px #96a78d;
 }
 
 .doa1 {
@@ -129,13 +214,34 @@ section {
   font-size: 0.7rem;
 }
 
+.container2-ucapanS2 {
+  position: relative;
+  color: #f0f0f0;
+  text-shadow: 0 0 8px #96a78d;
+  top: 4rem;
+  font-family: font1;
+  font-size: 0.55rem;
+  text-align: center;
+  letter-spacing: 0.4px;
+}
+
+.baris1::first-letter {
+  font-family: font4;
+  font-size: 40px; /* bikin huruf lebih gede */
+  font-weight: bold; /* huruf tebal */
+  float: left; /* biar agak turun ke bawah */
+  line-height: 0.5; /* rapetin biar rapi */
+  margin-right: 3px; /* kasih jarak sama teks berikutnya */
+}
+
 .slide3 {
   height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  animation: bgChange 12s infinite alternate;
+  background: linear-gradient(to bottom, #96a78d, #f0f0f0);
 }
 
 @keyframes bgChange {
@@ -160,11 +266,13 @@ section {
   width: 200px;
   height: 200px;
   border-radius: 50%;
+  border: 8px solid #697762;
+  box-shadow: 0 0 8px #3d5034;
   background-image: url("aset/inda1.jpg"); /* ganti dengan foto gebetan */
   background-size: cover;
   background-position: center;
-  animation: spin 8s linear infinite;
-  margin-bottom: 1rem;
+  animation: spin 15s linear infinite;
+  margin-bottom: 0, 5rem;
 }
 
 @keyframes spin {
@@ -180,6 +288,7 @@ section {
 }
 
 .lagu-controls button {
+  font-family: font3;
   padding: 0.5rem 1rem;
   margin: 0.3rem;
   border: none;
@@ -197,10 +306,10 @@ section {
 }
 
 .lyrics {
-  margin-top: 1.5rem;
+  margin-top: 5rem;
   text-align: center;
   font-size: 0.5rem;
-  font-family: Arial, sans-serif;
+  font-family: font3, Arial, sans-serif;
   color: gray; /* default burem */
 }
 
@@ -212,9 +321,82 @@ section {
 .lyrics span.active {
   opacity: 1; /* full muncul */
   font-weight: bold;
+  color: #f0f0f0;
+  text-shadow: 0 0 10px #4cb85e;
 }
 
 .lyrics span.fadeout {
   opacity: 0.3; /* balik burem lagi */
   font-weight: normal;
+}
+
+.star {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #8efeb1;
+  border-radius: 50%;
+  animation: twinkle 2s infinite alternate;
+  opacity: 0.1;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* tambahin di CSS */
+.slide1::before,
+.slide2::before,
+.slide3::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.15;
+  z-index: 0;
+  transition: background-image 1.5s ease-in-out; /* transisi halus */
+  animation: gridMove 10s linear infinite;
+}
+
+/* Grid default (slide 1 & 2) */
+.slide1::before,
+.slide2::before,
+.slide3::before {
+  background-image: linear-gradient(black 1px, transparent 1px),
+    linear-gradient(90deg, black 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Polkadot khusus slide 3 */
+.slid::before {
+  background-image: radial-gradient(black 2px, transparent 2px);
+  background-size: 60px 60px;
+  animation: gridMove 10s linear infinite;
+}
+
+/* Animasi grid bergerak */
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
+}
+
+/* Animasi polkadot bergerak */
+@keyframes dotsMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 80px 80px;
+  }
 }
