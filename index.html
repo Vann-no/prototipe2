@@ -9,18 +9,24 @@
   </head>
 
   <body>
+    <nav class="dot-nav" aria-label="Navigasi Slide">
+      <a href="#s1"></a>
+      <a href="#s2"></a>
+      <a href="#s3"></a>
+    </nav>
+
     <main class="viewport">
       <!-- 1.slide -->
-      <section class="slide1">
+      <section id="s1" class="slide1">
         <!-- Pilihan Lagu -->
         <div class="container-lagu">
           <div class="lagu-controls">
-            <button id="startMusic">Play random</button>
+            <button id="startMusic">Play</button>
             <button id="song1Btn" onclick="playLagu1('aset/lagu1.mp3', this)">
-              stuck with you
+              song ?
             </button>
             <button id="song2Btn" onclick="playLagu2('aset/lagu2.mp3', this)">
-              best part
+              song ??
             </button>
           </div>
         </div>
@@ -29,6 +35,9 @@
           <img src="aset/kucingbuket.png" alt="kucing" class="kucingbuket" />
         </div>
 
+        <div class="confetti"></div>
+        <div class="star"></div>
+
         <div class="container-ucapanS1">
           <h1 class="hbd1">Happy Birthday Indaaah</h1>
           <h3 class="hbd2">yang ke 15<small>thn</small></h3>
@@ -36,20 +45,44 @@
       </section>
 
       <!-- 2.slide -->
-      <section class="slide2">
+      <section id="s2" class="slide2">
         <div class="container-kue">
           <img src="aset/kue.png" alt="kue" class="kue" />
         </div>
 
         <div class="container-ucapanS2">
-          <h2 class="doa1">Semogaa Panjang Umurr, Sehat Selalu</h2>
-          <h2 class="doa2">Sekolaa nya Lancarr, Dan Cepet Gedee yaaw</h2>
+          <h2 class="doa1">this virtual cake for my princesss (っ´▽`)っ🎂</h2>
+          <h2 class="doa2">wish you all the best!!</h2>
+        </div>
+
+        <div class="container2-ucapanS2">
+          <p class="baris1">
+            Haloww bocill, So… you finally found out what the secret was for,
+            huh? 😏
+          </p>
+          <p>
+            i hope you like with the gift, of course I’ll make it even better
+            next time.
+          </p>
+          <p>soo stay tuned !!!, betah betah deh yaa sama abang</p>
+          <br />
+          <p>sebenernya ada lagu lain yang pengen abang tambahin</p>
+          <p>karna lirik nya pas banget buat indaa, next time aja yaww.</p>
+          <p>
+            dan untuk 2 lagu sekarang itu sesuai sama pesan yang abang pengen
+            sampein,
+          </p>
+          <p>
+            cumaa bingung mau rangkai pesannya gimana jadi pake lagu ajaa T.T
+          </p>
+          <p>im sorry kalo pemilihan katanya rada cringe atau alay,</p>
+          <p>but need to know, its purely from my heart and mind</p>
         </div>
       </section>
 
       <!-- 3.slide -->
 
-      <section class="slide3">
+      <section id="s3" class="slide3">
         <div class="music-container">
           <!-- Disc -->
           <div class="disc"></div>
@@ -62,49 +95,49 @@
           <!-- Lyrics -->
 
           <div id="lyrics1" class="lyrics">
+            <p><span data-time="0.5">Sampai akhir waktu nanti </span></p>
             <p>
-              <span data-time="-0.5"
-                >So, lock the door and throw out the key</span
-              >
-            </p>
-            <p><span data-time="2.7">Can't fight this no more</span></p>
-            <p><span data-time="5.0">It's just you and me</span></p>
-            <p>
-              <span data-time="6.0"
-                >and there's nothing i nothing i'd rather do</span
-              >
+              <span data-time="20.5">Aku tak main-main </span>
+              <span data-time="24.5">dengan semua ini </span>
             </p>
             <p>
-              <span data-time="10.0"
-                >i'm stuck with you, stuck with you, stuck with you</span
-              >
+              <span data-time="30.0">aku akan datang lagi </span>
+              <span data-time="35.0">meski ibu mu melarang, ouh </span>
             </p>
             <p>
-              <span data-time="15.0">so go ahead, and drive me insane</span>
+              <span data-time="40.0">ku tunjukkan kesungguhan </span>
+              <span data-time="45.0">untuk miliki diri mu <3 </span>
             </p>
-            <p><span data-time="19.0">baby run your mouth,</span></p>
-            <p><span data-time="20.5">i still wouldn't change</span></p>
-            <p><span data-time="22.5">all this lovin' you,</span></p>
-            <p><span data-time="24.0">hati'n you,</span></p>
-            <p><span data-time="25.0">wanti'n you</span></p>
-            <p>
-              <span data-time="27.0"
-                >i'm stuck with you, stuck with you, stuck with youuu</span
-              >
-            </p>
+            <p><span data-time="0.0"> </span></p>
+            <p><span data-time="0.0"> </span></p>
+            <p><span data-time="0.0"> </span></p>
           </div>
 
           <div id="lyrics2" class="lyrics" style="display: none">
-            <p><span data-time="0.0">Give it all, oh</span></p>
-            <p><span data-time="3.0">I just wanna see</span></p>
-            <p><span data-time="5.0">I just wanna see how</span></p>
-            <p><span data-time="8.0">beautiful you are</span></p>
-            <p><span data-time="11.0">You know that I see it</span></p>
-            <p><span data-time="14.5">I know you're a star</span></p>
-            <p><span data-time="17.5">Where you go, I'll follow</span></p>
-            <p><span data-time="21.0">no matter how far</span></p>
-            <p><span data-time="24.0">If life is a movie</span></p>
-            <p><span data-time="27.5">, then you're the best part</span></p>
+            <p>
+              <span data-time="2.0"
+                >Finding the right words to use for this song</span
+              >
+            </p>
+            <p>
+              <span data-time="8.0"
+                >I have you in mind, so it won't take so long</span
+              >
+            </p>
+            <p>
+              <span data-time="14.0">Never thought I'd find you,</span
+              ><span data-time="17.0"> but you're here,</span
+              ><span data-time="18.5"> and so I love you</span>
+            </p>
+            <p><span data-time="20.5">I'm not wrong when I say</span></p>
+            <p>
+              <span data-time="23.0"
+                >"I've been stuck by the glue onto you"</span
+              >
+            </p>
+            <p><span data-time="31.0">I've been stuck by glue</span></p>
+            <p><span data-time="38.0">Right onto you</span></p>
+            <p><span data-time="44.0">I've been stuck by glue</span></p>
           </div>
         </div>
       </section>
