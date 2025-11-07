@@ -1,3 +1,52 @@
+function createConfetti(container) {
+  const colors = [
+    " #8efeb1",
+    "#fdc0cdff",
+    "#aefafaff",
+    "#a8aaffff",
+    "#a9e5ffff",
+  ];
+  for (let i = 0; i < 75; i++) {
+    let confetti = document.createElement("div");
+    confetti.classList.add("confetti");
+
+    // posisi random
+    confetti.style.left = Math.random() * 100 + "vw";
+
+    // warna random
+    confetti.style.background =
+      colors[Math.floor(Math.random() * colors.length)];
+
+    // delay random
+    confetti.style.animationDelay = Math.random() * 2 + "s";
+
+    // ukuran random
+    let size = Math.random() * 8 + 5;
+    confetti.style.width = size + "px";
+    confetti.style.height = size + "px";
+
+    container.appendChild(confetti);
+
+    // hapus confetti setelah animasi selesai biar gak numpuk
+    setTimeout(() => confetti.remove(), 9000);
+  }
+}
+
+// Deteksi masuk slide1
+const slide1 = document.querySelector(".slide1");
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        createConfetti(slide1);
+      }
+    });
+  },
+  { threshold: 0.6 }
+); // minimal 60% slide kelihatan
+
+observer.observe(slide1);
+
 const startBtn = document.getElementById("startMusic");
 const player = document.getElementById("player");
 const lyrics = document.querySelectorAll(".lyrics span");
@@ -37,12 +86,12 @@ function playLagu(src, btn, lyricsId) {
   player.currentTime = 0; // replay dari awal
   player.volume = 0;
   player.play();
-  fadeIn(player, 2000);
+  fadeIn(player, 1000);
   isPlaying = true;
 
   // reset label tombol
-  song1Btn.textContent = "stuck with you";
-  song2Btn.textContent = "best part";
+  song1Btn.textContent = "sampai akhir waktu";
+  song2Btn.textContent = "glue song";
 
   // tombol resume jadi Pause
   startBtn.textContent = "Pause";
@@ -59,7 +108,7 @@ function playLagu(src, btn, lyricsId) {
   lyrics = document.querySelectorAll(`#${lyricsId} span`);
 }
 
-function fadeIn(audio, duration = 2000) {
+function fadeIn(audio, duration = 1000) {
   clearInterval(fadeInterval);
   audio.volume = 0;
   let step = 0.01;
@@ -141,3 +190,28 @@ song1Btn.addEventListener("click", () =>
 song2Btn.addEventListener("click", () =>
   playLagu("aset/lagu2.mp3", song2Btn, "lyrics2")
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  const starsCount = 30; // jumlah bintang
+  const viewport = document.querySelector(".viewport");
+
+  for (let i = 0; i < starsCount; i++) {
+    let star = document.createElement("div");
+    star.className = "star";
+    star.style.top = Math.random() * 100 + "vh";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = 1 + Math.random() * 2 + "s";
+    viewport.appendChild(star);
+  }
+});
+
+window.addEventListener("scroll", function () {
+  const slide3 = document.getElementById("s3");
+  const body = document.body;
+  const rect = slide3.getBoundingClientRect();
+  if (rect.top < window.innerHeight && rect.bottom > 0) {
+    body.classList.add("slide3-active");
+  } else {
+    body.classList.remove("slide3-active");
+  }
+});
