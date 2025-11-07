@@ -220,7 +220,7 @@ section {
   text-shadow: 0 0 8px #96a78d;
   top: 4rem;
   font-family: font1;
-  font-size: 0.55rem;
+  font-size: 0.8rem;
   text-align: center;
   letter-spacing: 0.4px;
 }
@@ -400,3 +400,4 @@ section {
     background-position: 80px 80px;
   }
 }
+
